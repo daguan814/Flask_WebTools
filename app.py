@@ -15,4 +15,4 @@ app.register_blueprint(blueprint=index_blue)
 app.register_blueprint(blueprint=learn_blue)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=9000, host="0.0.0.0")
