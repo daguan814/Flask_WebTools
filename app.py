@@ -1,17 +1,18 @@
-from flask import Flask, render_template
+"""
+@author shuijing
+@date 2023-10-20 10:34
+@version 1.0
+@description
+"""
+
+from flask import Flask
+from modules.index.IndexViews import index_blue
+from modules.learn.LearnViews import learn_blue
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
-
-
-@app.route('/index')
-def index():
-    return render_template('index.html', name='张三')
-
+# 导入蓝图
+app.register_blueprint(blueprint=index_blue)
+app.register_blueprint(blueprint=learn_blue)
 
 if __name__ == '__main__':
     app.run()

@@ -2,11 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>水镜导航</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-<h2>Index</h2>
-<hr>
-{{ name }}
+<table>
+    <tr>
+        <th>入口说明</th>
+        <th>点击进入</th>
+    </tr>
+    <tr>
+        <td>这是一个水镜nas的管理后台</td>
+        <td>
+            <button onclick="window.open('http://10.11.2.231:5000', '_blank')">水镜NAS系统</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Jellyfin影音系统，方便看电影</td>
+        <td>
+            <button onclick="window.open('http://10.11.2.231:8096', '_blank')">影音系统</button>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
