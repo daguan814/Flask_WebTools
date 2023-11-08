@@ -6,22 +6,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
+
 <table>
     <tr>
+        <th colspan="2">水镜NAS基本功能导航</th>
+
+    </tr>
+    <tr>
+        <th colspan="2">您所在网络环境：{{ ins.nat_env }}</th>
+
+    </tr>
+    <tr>
         <th>入口说明</th>
-        <th>点击进入</th>
+        <th>进入</th>
     </tr>
     <tr>
         <td>这是一个水镜nas的管理后台</td>
         <td>
-            <button onclick="window.open('http://10.11.2.231:5000', '_blank')">水镜NAS系统</button>
+            <button onclick="window.open('{{ ins.nas_url }}', '_blank')">水镜NAS系统</button>
         </td>
     </tr>
     <tr>
         <td>Jellyfin影音系统，方便看电影</td>
         <td>
-            <button onclick="window.open('http://10.11.2.231:8096', '_blank')">影音系统</button>
+            <button onclick="window.open('{{ ins.movie_url }}', '_blank')">{{ ins.movie_name }}</button>
         </td>
+    </tr>
+    <tr>
+        <th colspan="2">说明：这个系统主要是用来导航水镜NAS的各项功能，会根据您所在网络环境自动选择外网或者内网的访问方式</th>
     </tr>
 </table>
 </body>

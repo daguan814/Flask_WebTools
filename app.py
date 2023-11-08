@@ -6,13 +6,14 @@
 """
 
 from flask import Flask
-from modules.index.IndexViews import index_blue
-from modules.learn.LearnViews import learn_blue
+
+from modules.index.index import index_blue
 
 app = Flask(__name__)
 # 导入蓝图
+
 app.register_blueprint(blueprint=index_blue)
-app.register_blueprint(blueprint=learn_blue)
+
 
 if __name__ == '__main__':
     app.run(port=9000, host="0.0.0.0")
