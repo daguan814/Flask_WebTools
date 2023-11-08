@@ -6,9 +6,7 @@
 """
 
 from flask import Flask
-
 from modules.index.index import index_blue
-
 app = Flask(__name__)
 # 导入蓝图
 

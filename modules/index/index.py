@@ -29,7 +29,3 @@ def index():
         ins.movie_name = '不在内网，无法访问'
     return render_template('index.html', ins=ins)
 
-
-@index_blue.route('/list')
-def index_list():
-    return 'index_list'
