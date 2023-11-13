@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 40px;
+}
+
+h1 {
+    color: #3a7a82;
+    border-bottom: 2px solid #333; /* Add a border under the heading */
+    padding-bottom: 10px; /* Add some space between the heading and the forms */
+}
+
+form {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="file"],
+input[type="text"] {
+    width: calc(100% - 16px); /* Adjusted width to account for padding */
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Add a border to text and file inputs */
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#usernameDisplay {
+    margin-top: 20px;
+    font-weight: bold;
+    border: 1px solid #ccc; /* Add a border to the username display */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.pickup-code-input {
+    width: 10px; /* 调整取件码框的宽度 */
+    font-size: 20px; /* 调整字体大小 */
+    padding: 8px; /* 调整内边距 */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center; /* 文本水平居中 */
+}
+/* 登录按钮样式 */
+#loginButton {
+    background-color: #ffa500; /* 橙色背景 */
+    color: white; /* 文字颜色 */
+    padding: 10px 15px; /* 内边距 */
+    border: none; /* 去除边框 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; /* 上外边距 */
+}
+
+#loginButton:hover {
+    background-color: #ff7f00; /* 悬停时的背景色 */
+}
+
+/* 不开放注册文本样式 */
+#noRegistrationText {
+    color: #666; /* 灰色文字 */
+    margin-top: 10px; /* 顶部边距 */
+    font-style: italic; /* 斜体 */
+    font-size: 20px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 16px;
+}
+

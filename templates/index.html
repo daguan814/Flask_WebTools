@@ -13,12 +13,18 @@
 
     </tr>
     <tr>
-        <th colspan="2">您所在网络环境：{{ ins.nat_env }}</th>
+        <th colspan="2">{{ ins.nat_env }}</th>
 
     </tr>
     <tr>
         <th>入口说明</th>
         <th>进入</th>
+    </tr>
+    <tr>
+        <td>樱花frp的签到地址，签到领流量</td>
+        <td>
+            <button onclick="window.open('/sakuraSign', '_blank')">{{ ins.qiandao }}</button>
+        </td>
     </tr>
     <tr>
         <td>这是一个水镜nas的管理后台</td>
@@ -29,7 +35,7 @@
     <tr>
         <td>Jellyfin影音系统，方便看电影</td>
         <td>
-            <button onclick="window.open('{{ ins.movie_url }}', '_blank')">{{ ins.movie_name }}</button>
+            <button onclick="window.open('{{ ins.movie_url }}')">{{ ins.movie_name }}</button>
         </td>
     </tr>
     <tr>

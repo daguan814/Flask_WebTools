@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flashTrans.css') }}">
+    <title>闪电快传</title>
+</head>
+<body>
+
+<h1>闪电快传</h1>
+
+<!-- 文件上传表单 -->
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="file">选择文件上传:</label>
+    <input type="file" name="file" id="file">
+    <br>
+    <input type="submit" value="上传文件">
+</form>
+
+<br>
+
+<!-- 文件下载表单 -->
+<form action="/download" method="get">
+    <label for="filename">输入取件码(四位数字)获取文件:</label>
+    <input type="text" name="filename" id="filename" pattern="\d{4}" title="请输入四位数字" required
+           class="pickup-code-input">
+    <br>
+    <input type="submit" value="获取文件">
+</form>
+<br>
+<!-- 登录按钮和文本 -->
+<button type="button" id="loginButton">登录</button>
+{#<p id="noRegistrationText">不开放注册</p>#}
+<!-- 底部声明 -->
+<div id="footer">
+    <p>Design by: shuijing</p>
+
+    <p>研发:云梦实中信息化中心&nbsp;&nbsp;&nbsp;开放时间:早7:00-晚23:00&nbsp;&nbsp;版本:V1.0 (super)</p>
+</div>
+</body>
+</html>
