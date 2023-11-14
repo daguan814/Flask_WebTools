@@ -13,7 +13,7 @@ class User(db.Model):
     # 表名
     __tablename__ = 'User'
     # 字段
-    userId = db.Column(db.String(30), primary_key=True)
+    userId = db.Column(db.String(255), primary_key=True)
     userName = db.Column(db.String(20), nullable=False)
-    userPwd = db.Column(db.String(50), nullable=False)
+    userPwd = db.Column(db.Text, nullable=False)
     createTime = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)

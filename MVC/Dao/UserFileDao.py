@@ -12,7 +12,7 @@ from exps import db
 class UserFile(db.Model):
     __tablename__ = 'UserFile'
     # 字段
-    userId = db.Column(db.String(20), primary_key=True)
+    userId = db.Column(db.String(255), primary_key=True)
     fileId = db.Column(db.Integer, nullable=False)
     FileName = db.Column(db.Text, nullable=False)
     downTimes = db.Column(db.Integer, nullable=False)

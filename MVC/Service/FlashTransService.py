@@ -23,7 +23,10 @@ def jiami(yuandata):
 
 # 验证密码
 def verifyPwd(login_password, dbpwd):
-    if bcrypt.checkpw(login_password.encode('utf-8'), dbpwd):
+    login_password = login_password.encode('utf-8')
+    dbpwd = dbpwd.encode('utf-8')
+
+    if bcrypt.checkpw(login_password, dbpwd):
         # 密码匹配，允许登录
         return True
     else:  # 密码不匹配，拒绝登录

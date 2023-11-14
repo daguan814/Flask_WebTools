@@ -17,11 +17,13 @@ app = Flask(__name__)
 app.register_blueprint(blueprint=index_blue)
 app.register_blueprint(blueprint=upload_blue)
 app.register_blueprint(blueprint=flashTrans_blue)
-#配置Https证书
+# 配置Https证书
 context = ('证书/amaa.cn.pem', '证书/amaa.cn.key')
-#配置session的Key
+# 配置session的Key
 app.config['SECRET_KEY'] = 'abc123'
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=7)
+# 启用客户端缓存
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = datetime.timedelta(seconds=1)
 
 # 配置数据库连接字符串
 db_uri = 'mysql+pymysql://root:Lhf2001@10.11.2.231:3306/FlashTrans'

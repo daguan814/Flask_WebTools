@@ -67,6 +67,7 @@ input[type="submit"]:hover {
     border-radius: 4px;
     text-align: center; /* 文本水平居中 */
 }
+
 /* 登录按钮样式 */
 #loginButton {
     background-color: #ffa500; /* 橙色背景 */
@@ -102,3 +103,13 @@ input[type="submit"]:hover {
     font-size: 16px;
 }
 
+#loginModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
