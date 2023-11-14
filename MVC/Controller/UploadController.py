@@ -10,7 +10,7 @@ from flask import Blueprint, render_template, request
 upload_blue = Blueprint('upload', __name__, url_prefix='/upload')
 
 
-@upload_blue.route('/')
+@upload_blue.route('/', methods=['POST'])
 def upload():
     # 检查是否有文件被上传
     if 'file' not in request.files:
@@ -19,6 +19,6 @@ def upload():
     file = request.files['file']
 
     # 保存文件到 "/upload" 文件夹
-    file.save('upload/' + file.filename)
+    file.save('uploads/' + file.filename)
 
     return '上传成功'

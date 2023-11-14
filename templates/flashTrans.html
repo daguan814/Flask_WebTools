@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/flashTrans.css') }}">
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='js/flashTrans.js') }}"></script>
     <title>闪电快传</title>
 </head>
 <body>
@@ -11,11 +13,11 @@
 <h1>闪电快传</h1>
 
 <!-- 文件上传表单 -->
-<form action="/upload" method="post" enctype="multipart/form-data">
+<form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
     <label for="file">选择文件上传:</label>
-    <input type="file" name="file" id="file">
+    <input type="file" name="file" id="fileInput">
     <br>
-    <input type="submit" value="上传文件">
+    <input type="button" value="上传文件" onclick="uploadFile()">
 </form>
 
 <br>
@@ -40,5 +42,10 @@
 
     <p>研发:云梦实中信息化中心&nbsp;&nbsp;&nbsp;开放时间:早7:00-晚23:00&nbsp;&nbsp;版本:V1.0 (super)</p>
 </div>
+
+<script>
+
+</script>
 </body>
+
 </html>

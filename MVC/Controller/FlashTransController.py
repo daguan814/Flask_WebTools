@@ -27,6 +27,8 @@ def flashTrans():
     if userName is None:  # 没有登陆
         session['userName'] = 'other'  # 默认给个other用户
         userName = '登录'
+    elif userName == 'other':  # 给的是other用户，但是不能显示出来
+        userName = '登录'
     else:
         userName = userName + "已登陆"
     return render_template('flashTrans.html', userName=userName)
@@ -53,9 +55,11 @@ def userLogin():
     print(user_by_username)
     if user_by_username is None:  # 用户不存在
         response_data = {'status': '300', 'message': '用户不存在'}
+        session.pop('userName', None)  # 如果用户输入错误，就把他的session清除
     # 判断这个用户的密码是否正确（解密）
     elif not verifyPwd(password, user_by_username.userPwd):
         response_data = {'status': '100', 'message': '用户名或密码不正确'}
+        session.pop('userName', None)  # 如果用户输入错误，就把他的session清除
     else:
         # 登陆成功添加一个session
         response_data = {'status': '200', 'message': '登陆成功'}
