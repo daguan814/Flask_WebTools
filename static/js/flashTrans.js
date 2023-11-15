@@ -15,12 +15,23 @@ function uploadFile() {
         method: 'POST',
         body: formData,
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('上传成功');
-        } else {
-            console.error('上传失败');
+        .then(function (response) {
+            // 检查响应是否成功
+            if (!response.ok) {
+                return response.json().then(function (data) {
+                    alert(data.message);
+                    throw new Error('请求出错，状态码为 ' + response.status);
+                });
+            }
+
+            // 将响应转换为JSON格式
+            return response.json();
+        }).then(function (data) {
+        // 处理JSON格式的响应数据
+        if (data.status === 200) {
+            alert(data.message);
         }
+
     })
-    .catch(error => console.error('上传失败:', error));
+        .catch(error => console.error('上传失败:', error));
 }
