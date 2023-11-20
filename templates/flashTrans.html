@@ -23,18 +23,19 @@
 <br>
 
 <!-- 文件下载表单 -->
-<form action="/download" method="get">
+<form action="/upload/download" method="post" onsubmit="submitDC(event)">
     <label for="filename">输入取件码(四位数字)获取文件:</label>
-    <input type="text" name="filename" id="filename" pattern="\d{4}" title="请输入四位数字" required
+    <input type="text" name="filename" id="file_code" pattern="\d{4}" title="请输入四位数字" required
            class="pickup-code-input">
     <br>
-    <input type="submit" value="获取文件">
+    <input type="submit" value="获取文件" >
 </form>
+
 <br>
 <!-- 登录按钮和文本 -->
 <a href="/flashTrans/loginPage">
-        <button type="button" id="loginButton">{{ userName }}</button>
-    </a>
+    <button type="button" id="loginButton">{{ userName }}</button>
+</a>
 {#<p id="noRegistrationText">不开放注册</p>#}
 <!-- 底部声明 -->
 <div id="footer">

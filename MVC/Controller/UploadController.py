@@ -55,3 +55,14 @@ def upload():
     file.save('uploads/' + saveFileName)
     response_data = {'status': 200, 'message': '上传成功，您的取件码：{}'.format(random_number)}
     return jsonify(response_data)
+
+
+@upload_blue.route('/download', methods=['POST'])
+def download():
+    # 获取前端发送的JSON数据
+    data = request.json
+    # 从JSON数据中获取取件码
+    file_code = data.get('file_code')
+
+    # print(file_code)
+    return file_code

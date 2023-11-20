@@ -40,11 +40,7 @@ function login() {
         })
         .then(function (data) {
             // 处理JSON格式的响应数据
-            if (data.status === 200){
-                alert(data.message);
-            }
-
-
+            alert(data.message);
             console.log(data);
             window.location.href = baseUrl + '/flashTrans';
         })
