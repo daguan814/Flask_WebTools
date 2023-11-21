@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fileList.css') }}">
+  <title>文件列表</title>
+  <style>
+    /* 你的 CSS 样式可以放在这里 */
+  </style>
+</head>
+<body>
+
+<h1>文件列表</h1>
+<table>
+  <thead>
+    <tr>
+      <th>取件码</th>
+      <th>文件名</th>
+      <th>下载次数</th>
+      <th>上传时间</th>
+      <th>删除？</th>
+      <th>用户</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for file in file_list %}
+      <tr>
+        <td>{{ file.fileId }}</td>
+        <td>{{ file.FileName }}</td>
+        <td>{{ file.downTimes }}</td>
+        <td>{{ file.createTime }}</td>
+        <td>{{ file.delStatus }}</td>
+        <td>{{ file.userName }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- 使用a标签创建链接 -->
+<a href="/flashTrans/logout" id="myButton">注销</a>
+</body>
+</html>

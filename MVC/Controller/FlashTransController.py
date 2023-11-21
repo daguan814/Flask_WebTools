@@ -68,6 +68,12 @@ def userLogin():
     return jsonify(response_data)
 
 
+@flashTrans_blue.route('/logout')
+def userLogout():
+    session['userName'] = 'other'
+    return redirect('/flashTrans')
+
+
 @flashTrans_blue.route('/userAdd', methods=['POST'])
 def addUser():
     # 用户加密
